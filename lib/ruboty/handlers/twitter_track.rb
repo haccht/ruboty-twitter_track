@@ -56,7 +56,8 @@ module Ruboty
         if cache[:terms].empty?
           message.reply("Tracking no terms.")
         else
-          cache[:terms].each { |words| message.reply(words.join(' '), code:true) }
+          response = cache[:terms].map { |words| message.reply(words.join(' ') }.join("\n")
+          message.reply(response, code:true)
         end
       end
 
