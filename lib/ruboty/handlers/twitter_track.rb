@@ -24,8 +24,8 @@ module Ruboty
         cache.message = message.original.except(:robot)
 
         message[:term].split(',').each do |term|
-          term.strip!
-          cache.terms.push(term).uniq!
+          words = term.strip.split(/\s+/).sort
+          cache.terms.push(words).uniq!
         end
 
         begin
@@ -40,8 +40,8 @@ module Ruboty
         cache.message = message.original.except(:robot)
 
         message[:term].split(',').each do |term|
-          term.strip!
-          cache.terms.delete(term)
+          words = term.strip.split(/\s+/).sort
+          cache.terms.delete(words)
         end
 
         begin
@@ -56,7 +56,7 @@ module Ruboty
         if cache.terms.empty?
           message.reply("Tracking no terms.")
         else
-          cache.terms.each { |term| message.reply(term, code:true) }
+          cache.terms.each { |words| message.reply(words.join(' '), code:true) }
         end
       end
 
