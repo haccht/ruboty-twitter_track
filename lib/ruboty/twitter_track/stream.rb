@@ -38,7 +38,8 @@ module Ruboty
         return if terms.empty?
 
         Thread.start do
-          @client.track(*terms) do |object|
+          query = terms.map { |w| w.join(' ') }
+          @client.track(*query) do |object|
             message = Message.new(message.merge(robot: @robot))
             message.reply(u(object))
           end
@@ -48,7 +49,8 @@ module Ruboty
       def restart(message, terms)
         return start(message, terms) unless @client.stream
 
-        @client.stream.update(params: {:track => terms.keys.join(',')})
+        query = terms.map { |w| w.join(' ') }
+        @client.stream.update(params: {:track => query.join(',')})
       end
 
       private
