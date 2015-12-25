@@ -40,8 +40,7 @@ module Ruboty
         Thread.start do
           query = terms.map { |w| w.join(' ') }
           @client.track(*query) do |object|
-            message = Message.new(message.merge(robot: @robot))
-            message.reply(u(object))
+            Message.new(message.merge(robot: @robot)).reply(u(object))
           end
         end
       end
