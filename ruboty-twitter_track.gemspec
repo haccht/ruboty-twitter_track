@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'ruboty-twitter_track'
   spec.version       = Ruboty::TwitterTrack::VERSION
   spec.authors       = ['haccht']
-  spec.email         = ['haccht00@gmail.com']
+  spec.email         = ['haccht@users.noreply.github.com']
   spec.summary       = "Ruboty handler to track tweets in the twitter stream."
   spec.description   = spec.summary
   spec.homepage      = 'https://github.com/haccht/ruboty-twitter_track'
