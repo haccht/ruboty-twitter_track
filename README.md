@@ -1,6 +1,6 @@
 # Ruboty::TwitterTrack
 
-Ruboty handler to track certain words in the twitter stream.
+Ruboty handler to track the twitter stream with the given words.
 
 ## Installation
 
@@ -18,17 +18,17 @@ And then execute:
 
 ```
 > @ruboty twitter track by rubygems
-@ruboty> Tracked 'rubygems'
+@ruboty> Tracked 'rubygems'.
 
 @ruboty> https://twitter.com/haccht/status/123456789
 @ruboty> https://twitter.com/haccht/status/123456790
 @ruboty> https://twitter.com/haccht/status/123456791
 
 > @ruboty twitter tracking
-@ruboty> 'rubygems'
+@ruboty> '100: rubygems'
 
-> @ruboty twitter untrack by rubygems
-@ruboty> Untracked 'rubygems'
+> @ruboty twitter untrack 100
+@ruboty> Untracked '100: rubygems'.
 ```
 
 ## Env
