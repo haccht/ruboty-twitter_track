@@ -40,7 +40,7 @@ module Ruboty
       def untrack(message)
         cache[:message] = message.original.except(:robot)
 
-        key   = message[:id]
+        key   = message[:id].to_i
         words = cache[:terms].delete(key)
         unless words
           message.reply("'#{key}' not found.")
